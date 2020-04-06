@@ -5,7 +5,7 @@ import '../providers/products.dart';
 import './product_item.dart';
 
 class ProductsGrid extends StatelessWidget {
-  var showFavorites;
+  final showFavorites;
 
   ProductsGrid(this.showFavorites);
 
