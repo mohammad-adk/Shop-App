@@ -19,11 +19,11 @@ class Product with ChangeNotifier {
       @required this.imageUrl,
       this.isFavorite = false});
 
-  Future<void> toggleFavoriteStatus() async {
+  Future<void> toggleFavoriteStatus(String token) async {
     var oldStatus = isFavorite;
     isFavorite = !isFavorite;
     final url =
-        'https://flutter-project-8f6e8.firebaseio.com/products/$id.json';
+        'https://flutter-project-8f6e8.firebaseio.com/products/$id.json?auth=$token';
     try {
       final response = await http.patch(url,
           body: json.encode({
